@@ -4,7 +4,7 @@ A Flux2-focused image captioning and prompt generation pipeline for ComfyUI, pow
 
 ---
 
-# What it does
+## What it does
 
 Most captioning nodes either describe an image or generate a prompt — I2Captioner does both in a single chained pipeline:
 
@@ -18,9 +18,9 @@ After captioning, both models are immediately unloaded from VRAM so Flux2 can lo
 
 ---
 
-# Nodes
+## Nodes
 
-# `I2Caption`
+### `I2Caption`
 The core captioning node. Takes an image, runs the two-stage Ollama pipeline, and outputs positive prompt, negative prompt, and the original image passthrough.
 
 | Input | Description |
@@ -41,7 +41,7 @@ The core captioning node. Takes an image, runs the two-stage Ollama pipeline, an
 
 ---
 
-# `I2Caption Loader`
+### `I2Caption Loader`
 A batch image loader that re-scans its folder on every queue run — no restart needed when you add or remove images. Wire a RandomNoise seed into `force_refresh` for automatic re-scan every run.
 
 | Input | Description |
@@ -55,19 +55,19 @@ A batch image loader that re-scans its folder on every queue run — no restart 
 
 ---
 
-# `I2Caption Resolution`
+### `I2Caption Resolution`
 Snaps an image to the nearest Flux2 training resolution bucket, preserving aspect ratio. Prevents composition and quality degradation from off-bucket dimensions.
 
 **Outputs:** `image` (IMAGE), `width` (INT), `height` (INT) — wire width/height directly to `I2Caption Latent`.
 
 ---
 
-# `I2Caption Latent`
+### `I2Caption Latent`
 Combines `Flux2Scheduler` and `EmptyFlux2LatentImage` into one node. Takes width, height, and steps, outputs SIGMAS and LATENT ready for `SamplerCustomAdvanced`.
 
 ---
 
-# Style Presets
+## Style Presets
 
 Presets are stored in `system_prompts.json` and loaded at startup. The following presets are included:
 
@@ -83,14 +83,14 @@ Presets are stored in `system_prompts.json` and loaded at startup. The following
 | `studio portrait` | Professional studio photography |
 | `my mix` | Pop art, surrealism, and dadaism blended |
 
-# Adding your own presets
+### Adding your own presets
 Select any preset from the dropdown, edit the `custom_system_prompt` and `style_hint` textareas, enter a name in `save_as_preset_name`, and click **💾 Save as Preset**. The preset is saved to `system_prompts.json` and appears in the dropdown immediately — no restart required.
 
 Selecting a preset from the dropdown automatically loads its `system_prompt` and `style_hint` into the editable textareas so you can inspect or tweak before running.
 
 ---
 
-# Saved output files
+### Saved output files
 
 When `save_caption_txt` is enabled, I2Captioner saves matched pairs directly — no separate Save Image node needed:
 
@@ -106,7 +106,7 @@ The counter is based on existing `.png` files in the folder and always continues
 
 ---
 
-# Requirements
+## Requirements
 
 - [Ollama](https://ollama.com) running locally
 - At least one vision model and one language model pulled:
@@ -119,12 +119,12 @@ Any Ollama-compatible vision model (e.g. `llava`, `bakllava`, `moondream`) and l
 
 ---
 
-# Installation
+## Installation
 
 ### Via ComfyUI Manager *(recommended)*
 Search for **I2Captioner** in the ComfyUI Manager custom node list and click Install. (coming soon)
 
-# Manual Install
+## Manual Install
 
 # Clone the repository
 git clone https://github.com/MrMorehole/I2Captioner
@@ -136,7 +136,7 @@ Restart ComfyUI after installation.
 
 ---
 
-# Included workflow
+## Included workflow
 
 Workflow_I2Caption.json` — a complete Flux2 workflow demonstrating the full pipeline:
 - Batch image loading with auto-refresh
@@ -148,7 +148,7 @@ Workflow_I2Caption.json` — a complete Flux2 workflow demonstrating the full pi
 
 ---
 
-## License
+### License
 
 Creative Commons.
 
