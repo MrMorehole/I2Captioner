@@ -144,7 +144,7 @@ Workflow_I2Caption.json` — a complete Flux2 workflow demonstrating the full pi
 - Two-stage captioning with style presets
 - Fast Groups Bypasser for enabling/disabling the captioning sections
 
- ![Example workflow](/assets/workflow.png)
+ ![Example workflow](/workflow.png)
 
 ---
 
