@@ -138,7 +138,7 @@ Restart ComfyUI after installation.
 
 ## Included workflow
 
-`workflows/Workflow_I2Caption.json` — a complete Flux2 workflow demonstrating the full pipeline:
+`Workflow_I2Caption.json` — a complete Flux2 workflow demonstrating the full pipeline:
 - Batch image loading with auto-refresh
 - Resolution snapping to Flux2 buckets
 - Two-stage captioning with style presets
