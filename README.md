@@ -14,6 +14,8 @@ Most captioning nodes either describe an image or generate a prompt — I2Captio
 
 After captioning, both models are immediately unloaded from VRAM so Flux2 can load without memory pressure.
 
+![Node preview](node.png)
+
 ---
 
 ## Nodes
