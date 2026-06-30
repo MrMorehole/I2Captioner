@@ -150,6 +150,4 @@ Restart ComfyUI after installation.
 
 ## License
 
-This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. See the [LICENSE](LICENSE) file for the full text.
-
-In short: you're free to use, modify, and distribute this software, but if you modify it and run it as a network service (e.g. host it for others to use), you must make the source code of your modified version available to those users.
+Creative Commons.
