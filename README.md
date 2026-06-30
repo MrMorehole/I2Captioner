@@ -110,11 +110,11 @@ The counter is based on existing `.png` files in the folder and always continues
 
 - [Ollama](https://ollama.com) running locally
 - At least one vision model and one language model pulled:
-- 
+ 
+```
 ollama pull llava
 ollama pull mistral
 ```
-
 Any Ollama-compatible vision model (e.g. `llava`, `bakllava`, `moondream`) and language model (e.g. `mistral`, `llama3`, `phi3`) will work — just enter the model name in the node.
 
 ---
