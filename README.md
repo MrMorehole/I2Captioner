@@ -146,6 +146,10 @@ Restart ComfyUI after installation.
 
 ![Example workflow](workflow.png)
 
+---
+
 ## License
 
 Creative Commons.
+
+---
